@@ -10,7 +10,7 @@ El proyecto incluye:
 
 ---
 
-## 🚀 Configuración e Instalación
+## Configuración e Instalación
 
 ### Requisitos
 
@@ -53,7 +53,7 @@ El proyecto incluye:
 
 ---
 
-## 📂 Entregable: Código del Modelo y Admin
+## Código del Modelo y Admin
 
 ### 1. Código del Modelo Tarea (`tareas/models.py`)
 
