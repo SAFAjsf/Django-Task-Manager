@@ -1,0 +1,14 @@
+# Archivos y directorios a ignorar
+
+# Entorno Virtual de Python
+.venv/
+venv/
+__pycache__/
+*.pyc
+
+# Base de Datos de Django (SQLite)
+db.sqlite3
+
+# Configuraciones de IDEs
+.idea/
+.vscode/

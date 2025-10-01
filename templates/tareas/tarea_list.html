@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Tareas</title>
+</head>
+<body>
+    <h1>Gestor de Tareas</h1>
+    <p><a href="{% url 'crear_tarea' %}">Crear Nueva Tarea</a></p>
+    {% if tareas %}
+        <table>
+            <thead>
+                <tr>
+                    <th>Título</th>
+                    <th>Prioridad</th>
+                    <th>Vigente</th>
+                    <th>Fecha Límite</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for tarea in tareas %}
+                <tr>
+                    <td>{{ tarea.titulo }}</td>
+                    <td>{{ tarea.prioridad }}</td>
+                    <td>
+                        {% if tarea.vigente %}
+                            Si
+                        {% else %}
+                            No
+                        {% endif %}
+                    </td>
+                    <td>
+                        {% if tarea.fecha_limite %}
+                            {{ tarea.fecha_limite|date:"d M Y" }}
+                        {% else %}
+                            N/A
+                        {% endif %}
+                    </td>
+                    <td>
+                        <a href="{% url 'detalle_tarea' tarea.pk %}">Ver</a> |
+                        <a href="{% url 'editar_tarea' tarea.pk %}">Editar</a> |
+                        <a href="{% url 'eliminar_tarea' tarea.pk %}">Eliminar</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p>No se encontraron tareas.</p>
+    {% endif %}
+
+    <p><a href="/admin">Ir al Django Admin</a></p>
+</body>
+</html>
