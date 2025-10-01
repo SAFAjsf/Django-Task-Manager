@@ -10,7 +10,7 @@ El proyecto incluye:
 
 ---
 
-## 🚀 Configuración e Instalación
+## Configuración e Instalación
 
 ### Requisitos
 
